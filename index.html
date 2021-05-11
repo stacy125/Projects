@@ -2,13 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-
   <title>3js</title>
+  <style>
+    * {
+      margin: 0;
+    }
+    button {
+    background-color: rgb(204, 178, 139);
+    border-radius: 10px;
+    margin-left: 0%;
+}
+
+  .button, .project-btn {
+      top: 5%;
+      display: inline-block;
+      width: 100%;
+      position: absolute;
+  }
+
+  .project-btn {
+    top: 10%;
+  }
+  </style>
 </head>
 <body>
+  <div class="button">
+    <a href="https://stacy125.github.io/homepage/"><button class="home">HOME</button></a>
+    <a href="https://stacy125.github.io/homepage/about/about.html"><button class="about">ABOUT ME</button></a>
+    <a href="/homepage/business/business.html"><button class="biz">BUSINESS EXPERIENCE</button></a>
+    <a href="https://stacy125.github.io/Projects/"><button class="projects">PROJECTS</button></a>
+    <a href="https://contact-svg.netlify.app/"><button class="contact">CONTACT INFO</button></a>
+  </div>
+  <div class="project-btn">
   <a href="https://stacy125.github.io/pokemon/"><button>Pokemon</button></a>
   <a href="https://stacy125.github.io/dog-info/"><button>Breed Info</button></a>
+  </div>
+  <div class="script">
 <script src="three.min.js"></script>
 <script>
 
@@ -20,26 +49,26 @@
   camera.position.z = 40
 
 
-  renderer.setClearColor(0xdd00dd)
+  renderer.setClearColor(0x00000d)
   renderer.setSize(window.innerWidth, window.innerHeight)
   renderer.shadowMap.enabled = true
   renderer.shadowMapSoft = true
 
   //GEOMETRY
   var cubeGeo = new THREE.BoxGeometry(5,5,5)
-  var cubeMat = new THREE.MeshLambertMaterial({color: 0x0000ff})
+  var cubeMat = new THREE.MeshLambertMaterial({color: 0x7777ff})
   var cube = new THREE.Mesh(cubeGeo, cubeMat)
   cube.castShadow = true;
   cube.position.y = 2.5;
 
   var planeGeo = new THREE.PlaneGeometry(100,100,100)
-  var planeMat = new THREE.MeshLambertMaterial(0xffffff)
+  var planeMat = new THREE.MeshLambertMaterial(0x777700)
   var plane = new THREE.Mesh(planeGeo,planeMat)
   plane.rotation.x = -.5 * Math.PI
   plane.receiveShadow = true;
 
 
-  var spotlight = new THREE.SpotLight(0xfffff)
+  var spotlight = new THREE.SpotLight(0xffffff)
   spotlight.castShadow = true
   spotlight.position.set(30,60,60)
 
@@ -126,5 +155,6 @@
   }
 
 </script>
+</div>
 </body>
 </html>
